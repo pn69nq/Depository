@@ -2,7 +2,7 @@ USE depository;
 DROP TABLE IF EXISTS dep_user;
 CREATE TABLE dep_user
 (
-  id INT PRIMARY KEY auto_increment,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(20),
   password VARCHAR(30)
 );
@@ -10,11 +10,16 @@ CREATE TABLE dep_user
 DROP TABLE IF EXISTS dep_purchase_plan;
 CREATE TABLE dep_purchase_plan
 (
-  id INT PRIMARY KEY auto_increment,
+  id INT NOT NULL AUTO_INCREMENT,
   username VARCHAR(20),
-  password VARCHAR(30)
+  password VARCHAR(30),
+  CONSTRAINT key_dep_purchase_plan PRIMARY KEY (id)
 );
-INSERT INTO dep_user(username, password) VALUE ("niubi","111111");
 
-
+DROP TABLE IF EXISTS dep_product;
+CREATE TABLE dep_product
+(
+  id INT AUTO_INCREMENT,
+  CONSTRAINT key_dep_product PRIMARY KEY (id)
+);
 
